@@ -1,14 +1,43 @@
+html {
+  margin: 0 auto;
+  background-color: #cecece
+}
 .App {
   text-align: center;
+  background-color: #cecece;
+  height: 100vh;
+
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* header */
+
+.header {
+  padding: 4em;
+}
+.header-text {
+  color: #000000;
+}
+
+
+/* Note Interface */
+.note-taker-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width:30%;
+  margin: auto;
+  background-color: white;
+  padding: 25px;
+}
+.note-item {
+  display: flex;
+  flex-direction: flex-start;
+  align-items: center;
+  width: 75%;
+  padding: 30 20 0;
+  border-bottom: 1px solid #bcbcbc;
+  font-style: Roboto;
+}
+input[type=checkbox]{
+  margin-right: 1em;
 }
