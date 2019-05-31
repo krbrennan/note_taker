@@ -1,3 +1,4 @@
+
 html {
   margin: 0 auto;
   background-color: #cecece
@@ -13,6 +14,8 @@ html {
 
 .header {
   padding: 4em;
+  border: 2px solid #fefefe;
+  margin-bottom: 2em;
 }
 .header-text {
   color: #000000;
@@ -33,6 +36,7 @@ html {
       0 1px 1px rgba(0,0,0,0.15),
           /* The third layer shadow */
       0 20px 1px -9px rgba(0,0,0,0.15);
+  border-radius: 1em;
 }
 .todo-item {
   display: flex;
