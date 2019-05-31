@@ -2,7 +2,7 @@ import React from 'react'
 
 function ToDoItems(props){
 
-  let isComplete = props.content.completed == true ? 1 : 0;
+  let isComplete = props.content.completed === true ? 1 : 0;
 
   return(
     <div className='todo-item'>
