@@ -1,5 +1,13 @@
 import React from 'react'
 
+// For a few hours I was confounded with a simple issue.
+// onSubmit of the form I called a function in the parent component (through props)
+// and wondered why this component wouldn't reset the form value (back to '').
+// To remedy the issue I instead called a function within this component to handle the submit.
+// Within handleSubmit(e) I was able to clear the form value
+// and also pass the content back up to the parent so the parent
+// could update state with a new to-do item
+
 
 class AddItem extends React.Component{
 
@@ -24,20 +32,16 @@ class AddItem extends React.Component{
   }
 
   handleSubmit(e){
-    // e.persist()
     e.preventDefault()
     this.props.onSubmit(e.target[0].defaultValue)
-    // console.log(this.props.onSubmit())
-    // console.log(e.target[0].defaultValue)
     this.clearInputField()
   }
-
 
   render(){
     return(
       <div>
       <form onSubmit={this.handleSubmit} >
-          <label>Add Item:
+          <label><h3>Add Item:</h3>
             <input
               type='text'
               placeholder='New Item, Wow, incredible'
