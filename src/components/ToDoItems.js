@@ -1,7 +1,6 @@
 import React from 'react'
 
 function ToDoItems(props){
-  console.log(props.content.isComplete)
   let isComplete = props.content.isComplete === true ? 1 : 0;
 
   return(

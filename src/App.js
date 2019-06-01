@@ -23,19 +23,20 @@ class App extends React.Component {
     // this.onChange = this.onChange.bind(this)
   }
 
-  // componentDidMount(){
-  //   // const initialToDos = notesData.map(item => <ToDoItems content={item}/>)
-  //   this.setState({
-  //     allItems: this.state.todoItems
-  //   })
-  // }
-
   handleNewItem(event){
     event.preventDefault()
     event.persist()
-    let newItemContent = event.target[0].value
 
-    // this.setState(state => state.todoItems.push(<ToDoItems content={{text: newItemContent, completed: false}} />))
+    let nextId = this.state.toDoItems.slice(-1).id + 1
+    let newItemText = event.target[0].value
+    const newState = this.state.toDoItems.concat({id: nextId, text: newItemText, isComplete: false})
+
+    this.setState(state => {
+        state.toDoItems = newState
+      return {
+        state
+      }
+    })
   }
 
   render(){
@@ -46,6 +47,7 @@ class App extends React.Component {
         <div className='todo-container'>
           <AddItem onSubmit={this.handleNewItem} />
           {toDos}
+          {console.log(this.state.toDoItems)}
         </div>
       </div>
     )
