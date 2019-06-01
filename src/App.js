@@ -5,9 +5,6 @@ import './App.css'
 
 import Header from './components/Header'
 
-import notesData from './components/notesData'
-// import Note from './components/Note'
-
 class App extends React.Component {
 
   constructor(){
@@ -20,16 +17,13 @@ class App extends React.Component {
       ]
     }
     this.handleNewItem = this.handleNewItem.bind(this)
-    // this.onChange = this.onChange.bind(this)
   }
 
   handleNewItem(event){
-    event.preventDefault()
-    event.persist()
+    console.log(event)
 
     let nextId = this.state.toDoItems.slice(-1).id + 1
-    let newItemText = event.target[0].value
-    const newState = this.state.toDoItems.concat({id: nextId, text: newItemText, isComplete: false})
+    const newState = this.state.toDoItems.concat({id: nextId, text: event, isComplete: false})
 
     this.setState(state => {
         state.toDoItems = newState

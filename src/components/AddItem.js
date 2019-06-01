@@ -9,7 +9,8 @@ class AddItem extends React.Component{
       toDoItemValue: ''
     }
     this.handleChange = this.handleChange.bind(this)
-    // this.clearInputField = this.clearInputField.bind(this)
+    this.clearInputField = this.clearInputField.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
   handleChange(event){
@@ -18,18 +19,24 @@ class AddItem extends React.Component{
     })
   }
 
-  // clearInputField(e){
-  //   e.persist()
-  //   e.preventDefault()
-  //   this.setState({
-  //     toDoItemValue: ''
-  //   })
-  // }
+  clearInputField(){
+    this.setState({toDoItemValue: ''})
+  }
+
+  handleSubmit(e){
+    // e.persist()
+    e.preventDefault()
+    this.props.onSubmit(e.target[0].defaultValue)
+    // console.log(this.props.onSubmit())
+    // console.log(e.target[0].defaultValue)
+    this.clearInputField()
+  }
+
 
   render(){
     return(
       <div>
-        <form id='addItemForm' onSubmit={this.props.onSubmit}>
+      <form onSubmit={this.handleSubmit} >
           <label>Add Item:
             <input
               type='text'
@@ -38,7 +45,7 @@ class AddItem extends React.Component{
               value={this.state.toDoItemValue}
             />
           </label>
-        </form>
+          </form>
       </div>
     )
   }
