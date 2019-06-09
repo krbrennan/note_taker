@@ -44,9 +44,10 @@ class AddItem extends React.Component{
           <label><h3>Add Item:</h3>
             <input
               type='text'
-              placeholder='New Item, Wow, incredible'
+              placeholder='New Item, Wow, Incredible'
               onChange={this.handleChange}
               value={this.state.toDoItemValue}
+              className='add-item-text'
             />
           </label>
           </form>

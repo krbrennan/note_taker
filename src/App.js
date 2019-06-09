@@ -27,26 +27,34 @@ class App extends React.Component {
       ]
     }
     this.handleNewItem = this.handleNewItem.bind(this)
-    this.handleChange = this.handleChange.bind(this)
     this.handleClick = this.handleClick.bind(this)
   }
 
-  handleClick(e){
+  handleClick(id, cName){
     // this is getting called from ToDoItems child component
     // When the item is clicked (making it complete or not)
     // I want the items' complteted state to be changed here.
-    let id = e
+
+    if(cName === 'delete-item-checkbox'){
+      let newListAfterDelete = [{id:1, text: "Add a new item!", isComplete:true},]
       this.state.toDoItems.map(item => {
-        if(item.id === e){
+        if(item.id != id){
+          newListAfterDelete.concat(item)
+        }
+      })
+      this.setState({
+        toDoItems:newListAfterDelete
+      })
+    } else {
+      this.state.toDoItems.map(item => {
+        if(item.id === id){
           item.isComplete = !item.isComplete
         }
       })
-
-console.log(this.state.toDoItems)
+    }
   }
 
   handleNewItem(event){
-
     let nextId = this.state.toDoItems.length+1
     const newState = this.state.toDoItems.concat({id: nextId, text: event, isComplete: false})
 
@@ -56,10 +64,6 @@ console.log(this.state.toDoItems)
         state
       }
     })
-  }
-
-  handleChange(e){
-    console.log('changed!')
   }
 
   render(){
