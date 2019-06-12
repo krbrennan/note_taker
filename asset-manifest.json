@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/krbrennan/note_taker/static/css/main.e8aa8663.chunk.css",
+    "main.js": "/krbrennan/note_taker/static/js/main.6dc79ba2.chunk.js",
+    "main.js.map": "/krbrennan/note_taker/static/js/main.6dc79ba2.chunk.js.map",
+    "runtime~main.js": "/krbrennan/note_taker/static/js/runtime~main.977944b2.js",
+    "runtime~main.js.map": "/krbrennan/note_taker/static/js/runtime~main.977944b2.js.map",
+    "static/js/2.ce5e4dec.chunk.js": "/krbrennan/note_taker/static/js/2.ce5e4dec.chunk.js",
+    "static/js/2.ce5e4dec.chunk.js.map": "/krbrennan/note_taker/static/js/2.ce5e4dec.chunk.js.map",
+    "index.html": "/krbrennan/note_taker/index.html",
+    "precache-manifest.7ddf5070f1b5d9d6e17a12e520d4bbf2.js": "/krbrennan/note_taker/precache-manifest.7ddf5070f1b5d9d6e17a12e520d4bbf2.js",
+    "service-worker.js": "/krbrennan/note_taker/service-worker.js",
+    "static/css/main.e8aa8663.chunk.css.map": "/krbrennan/note_taker/static/css/main.e8aa8663.chunk.css.map"
+  }
+}
